@@ -9,7 +9,7 @@ public class ListItem {
     private int imageResId;
     private String level;
     private String sign;
-    private String  record;
+    private String record;
 
     public void setImageResId(int imageResId) {
         this.imageResId = imageResId;

@@ -1,66 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cont_item_root"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
-    android:orientation="horizontal"
-    android:paddingLeft="16dp"
+    android:layout_height="100dp"
     android:clickable="true"
-    android:id="@+id/cont_item_root">
+    android:orientation="horizontal"
+    android:paddingLeft="16dp">
 
     <ImageView
         android:id="@+id/im_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-         android:src="@drawable/bishi"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingLeft="18dp"
-        android:text="text"
-        android:id="@+id/lbl_item_text"
-        android:textSize="25dp"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/im_item_icon"
-        android:layout_marginLeft="15dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lbl_item_text2"
-        android:text="test2"
-        android:textSize="18dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/lbl_item_text"
-        android:layout_marginLeft="25dp" />
+        android:src="@drawable/bishi" />
 
 
     <TextView
+        android:id="@+id/lbl_item_text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:textSize="16dp"
-        android:text="text3"
-        android:id="@+id/lbl_item_text3"
-        android:layout_toRightOf="@id/im_item_icon"
         android:layout_marginLeft="35dp"
-        />
+        android:layout_toRightOf="@id/im_item_icon"
+        android:text="text3"
+        android:textSize="16dp" />
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/lbl_item_text3"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/im_item_icon"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/lbl_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"
+            android:text="text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/lbl_item_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_toRightOf="@+id/lbl_item_text"
+            android:text="test2"
+            android:textSize="18dp" />
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
 
 
     <TextView
+        android:id="@+id/lbl_item_text4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="text4"
-        android:id="@+id/lbl_item_text4"
-        android:textSize="18dp"
-        android:layout_toRightOf="@+id/im_item_icon"
+        android:layout_below="@+id/lbl_item_text3"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/im_item_icon"
+        android:text="text4"
+        android:textSize="18dp"
 
         />
 

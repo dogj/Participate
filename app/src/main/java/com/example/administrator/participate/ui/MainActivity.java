@@ -2,6 +2,7 @@ package com.example.administrator.participate.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +27,22 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Adapter adapter = new Adapter(Data.getListData(),this);
-        adapter.setOnItemClickListener(new Adapter.OnRecyclerViewItemClickListener(){
+        Adapter adapter = new Adapter(Data.getListData(), this);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(this, layoutManager.getOrientation());
+        recyclerView.addItemDecoration(itemDecoration);
+
+
+        adapter.setOnItemClickListener(new Adapter.OnRecyclerViewItemClickListener() {
 
             @Override
             public void onItemClick(View view, String data) {
-                Toast.makeText(MainActivity.this,data,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
             }
         });
         recyclerView.setAdapter(adapter);
+
     }
+
 }
