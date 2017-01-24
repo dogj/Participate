@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 //                Toast.makeText(MainActivity.this,""+mLayoutManager.findLastVisibleItemPosition(),Toast.LENGTH_SHORT).show();
 //                Toast.makeText(MainActivity.this,""+adapter.getItemCount(),Toast.LENGTH_SHORT).show();
                  if(mLayoutManager.findLastVisibleItemPosition()==(adapter.getItemCount()-1)){
-                     Toast.makeText(MainActivity.this,"刷新了"+mLayoutManager.findLastCompletelyVisibleItemPosition(),Toast.LENGTH_SHORT).show();
+                     Toast.makeText(MainActivity.this,"刷新了2个于底部",Toast.LENGTH_SHORT).show();
                      List<ListItem> data;
                      data = Data.add();
                      adapter.additem(data);
