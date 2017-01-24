@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implements View.OnClickListener {
 
-    private List<ListItem> listData;
+    public List<ListItem> listData;
     private LayoutInflater inflater;
     private OnRecyclerViewItemClickListener mOnItemClickListener = null;
     public Adapter(List<ListItem> listData, Context c){
@@ -40,8 +40,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         ListItem item =listData.get(position);
-        String[] a={"哈哈","呵呵","嘻嘻"};
-        holder.itemView.setTag(a[position]);
+//        String[] a={"哈哈","呵呵","嘻嘻"};
+        holder.itemView.setTag(item.getRecord());
         holder.title.setText(item.getTitles());
         holder.icon.setImageResource(item.getImageResId());
         holder.level.setText(item.getLevel());
@@ -76,6 +76,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
 
         }
     }
+
+    public void additem(List<ListItem> newdata){
+
+        newdata.addAll(listData);
+        listData.removeAll(listData);
+        listData.addAll(newdata);
+    }
+
 
     @Override
     public void onClick(View v) {
